@@ -41,5 +41,27 @@ pubmed-fetcher/
 3. Filtering Non-Academic Authors
 4. Storing Results in CSV
 
+# Testing 
+poetry run pytest tests/
+API Calls: Ensures successful retrieval of PubMed IDs and article metadata.
+Data Parsing: Validates correct extraction of article details.
+Filtering Mechanism: Confirms accurate identification of non-academic authors.
+CSV Output: Ensures structured storage of results
+
+# CLI Commands
+To fetch Fetch research papers based on a search query : poetry run python -m pubmed_fetcher.cli "cancer treatment"
+To Save Results to csv : poetry run python -m pubmed_fetcher.cli "cancer treatment" --file results.csv
+To Enable Debug Mode : poetry run python -m pubmed_fetcher.cli "cancer treatment" --debug
+To show available options : poetry run python -m pubmed_fetcher.cli --help
+
+# Sample Output
+After running the program, the output CSV will contain structured information:
+PubmedID,Title,Publication Date,Non-academic Author(s),Company Affiliation(s)
+39936378,"DNA methylation and cancer",2025,"John Doe","ABC Biotech"
+39936374,"Drug resistance in cancer treatment",2025,"Jane Smith","XYZ Pharmaceuticals"
+
+
+
+
 
 
